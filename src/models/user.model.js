@@ -2,10 +2,9 @@ import fetch from "node-fetch";
 import hubspot from '@hubspot/api-client';
 
 
-
 class JobModel {
 
-    getContactData = async(email) => {
+    getContactData = async (email) => {
         let data = await fetch(`https://api.hubapi.com/contacts/v1/contact/email/${email}/profile`, {
             method: "GET",
             headers: {
@@ -26,14 +25,17 @@ class JobModel {
     };
 
     //Base URL - https://6107279.fs1.hubspotusercontent-na1.net/hubfs/6107279/Energiesparrechner_PDFs/
-    updtPdfUrl = async(contId, req, res) => {
+    updtPdfUrl = async (contId, req, res) => {
         const hubspotClient = new hubspot.Client({ "accessToken": process.env.accessToken });
 
+        const t = Date.now();
+
         let baseURL = `${process.env.folderStaticURL}`;
+
         const properties = {
-            "de_pdf": `${baseURL}${contId}_de.pdf`,
-            "fr_pdf": `${baseURL}${contId}_fr.pdf`,
-            "it_pdf": `${baseURL}${contId}_it.pdf`,
+            "de_pdf": `${baseURL}${contId}/${contId}_de.pdf?time=${t}`,
+            "fr_pdf": `${baseURL}${contId}/${contId}_fr.pdf?time=${t}`,
+            "it_pdf": `${baseURL}${contId}/${contId}_it.pdf?time=${t}`,
         };
         const SimplePublicObjectInput = { properties };
         const contactId = contId;

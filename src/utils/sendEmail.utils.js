@@ -32,7 +32,6 @@ const sendEMail = async (bodyData, res) => {
             Ihre_Heizart: de_data.Ihre_Heizart,
             Aktuelle_Fenster: de_data.Aktuelle_Fenster,
             email: de_data.email,
-            Fenster_verbaut: de_data.Fenster_verbaut,
             Verbaut: de_data.Verbaut,
             Stückzahl: de_data.Stückzahl,
             PZL_und_Ort: de_data.PZL_und_Ort,
@@ -52,7 +51,6 @@ const sendEMail = async (bodyData, res) => {
             Ihre_Heizart: fr_data.Ihre_Heizart,
             Aktuelle_Fenster: fr_data.Aktuelle_Fenster,
             email: fr_data.email,
-            Fenster_verbaut: fr_data.Fenster_verbaut,
             Verbaut: fr_data.Verbaut,
             Stückzahl: fr_data.Stückzahl,
             PZL_und_Ort: fr_data.PZL_und_Ort,
@@ -72,7 +70,6 @@ const sendEMail = async (bodyData, res) => {
             Ihre_Heizart: it_data.Ihre_Heizart,
             Aktuelle_Fenster: it_data.Aktuelle_Fenster,
             email: it_data.email,
-            Fenster_verbaut: it_data.Fenster_verbaut,
             Verbaut: it_data.Verbaut,
             Stückzahl: it_data.Stückzahl,
             PZL_und_Ort: it_data.PZL_und_Ort,
@@ -93,7 +90,6 @@ const sendEMail = async (bodyData, res) => {
         const html_en = htmlTemplate_en.replace('{{Ihre_Heizart}}', data_de.Ihre_Heizart)
             .replace('{{Aktuelle_Fenster}}', data_de.Aktuelle_Fenster)
             .replace('{{email}}', data_de.email)
-            .replace('{{Fenster_verbaut}}', data_de.Fenster_verbaut)
             .replace('{{Verbaut}}', data_de.Verbaut)
             .replace('{{Stückzahl}}', data_de.Stückzahl)
             .replace('{{PZL_und_Ort}}', data_de.PZL_und_Ort)
@@ -116,7 +112,6 @@ const sendEMail = async (bodyData, res) => {
         const html_fr = htmlTemplate_fr.replace('{{Ihre_Heizart}}', data_fr.Ihre_Heizart)
             .replace('{{Aktuelle_Fenster}}', data_fr.Aktuelle_Fenster)
             .replace('{{email}}', data_fr.email)
-            .replace('{{Fenster_verbaut}}', data_fr.Fenster_verbaut)
             .replace('{{Verbaut}}', data_fr.Verbaut)
             .replace('{{Stückzahl}}', data_fr.Stückzahl)
             .replace('{{PZL_und_Ort}}', data_fr.PZL_und_Ort)
@@ -139,7 +134,6 @@ const sendEMail = async (bodyData, res) => {
         const html_es = htmlTemplate_es.replace('{{Ihre_Heizart}}', data_it.Ihre_Heizart)
             .replace('{{Aktuelle_Fenster}}', data_it.Aktuelle_Fenster)
             .replace('{{email}}', data_it.email)
-            .replace('{{Fenster_verbaut}}', data_it.Fenster_verbaut)
             .replace('{{Verbaut}}', data_it.Verbaut)
             .replace('{{Stückzahl}}', data_it.Stückzahl)
             .replace('{{PZL_und_Ort}}', data_it.PZL_und_Ort)
