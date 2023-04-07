@@ -6,9 +6,7 @@ import path from 'path';
 
 class UploadFilesModel {
 
-
     getFilesFromHubSpot = async (email) => {
-        // const fileFolderId = 109260700777;
         const fileFolderId = `${process.env.folderId}`;
 
         // let response = await fetch(`https://api.hubapi.com/filemanager/api/v3/files?folderId=${fileFolderId}`, {

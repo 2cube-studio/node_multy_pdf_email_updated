@@ -5,7 +5,7 @@ import util from 'util';
 import userController from '../controllers/user.controller.js';
 
 
-const sendEMail = async (bodyData, res) => {
+const pdfCreate = async (bodyData, res) => {
     const writeFileAsync = util.promisify(fs.writeFile);
 
     // Function to generate PDF file from HTML and CSS
@@ -158,8 +158,6 @@ const sendEMail = async (bodyData, res) => {
             { filename: '2cube-test_it.pdf', content: pdfBuffer_it }
         ];
         const createdPdf = [filePath_de, filePath_fr, filePath_it]
-        // await StorePdf(filePath_de, filePath_fr, filePath_it, res);
-        // await userController.StorePdf(filePath_de, filePath_fr, filePath_it, contId, res)
         await userController.StorePdf(createdPdf, contId, res)
     }
 
@@ -167,4 +165,4 @@ const sendEMail = async (bodyData, res) => {
 
 };
 
-export default sendEMail;
+export default pdfCreate;

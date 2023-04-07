@@ -1,4 +1,4 @@
-import sendEmail from '../utils/sendEmail.utils.js';
+import pdfCreate from '../utils/pdfCreate.utils.js';
 import userModel from "../models/user.model.js";
 import uploadFilesModel from "../models/uploadFiles.model.js";
 
@@ -35,7 +35,7 @@ class UserController {
                 }
             }
 
-            await sendEmail(bodyData, res);
+            await pdfCreate(bodyData, res);
         } else {
             return res.status(500).json({ message: `Incorrect This Email Address'${req.body.email}'.` });
         }
