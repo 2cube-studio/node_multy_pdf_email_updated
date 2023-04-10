@@ -21,25 +21,83 @@ const pdfCreate = async (bodyData, res) => {
 
     // Example usage
     async function main() {
+        const date = new Date();
+        const options = { hour12: true, hour: "numeric" };
+        const formattedDate = date.toLocaleString("en-US", options);
         const contId = bodyData.id;
 
         const de_data = bodyData;
         const fr_data = bodyData;
         const it_data = bodyData;
 
+        const option_1 = de_data.Ihre_Heizart; // 3
+        const option_2 = de_data.Ihre_Heizart;
+        var langObj = {
+            "de": {
+                "moneysaving": "CHF",
+                "energysaving": {
+                    "1": "Liter",
+                    "2": "m3",
+                    "3": "kg/Jahr",
+                    "4": "kg"
+                },
+                "CO2reduction": "kg/Jahr",
+                "CO2reduction2": "kg"
+            },
+            "it": {
+                "moneysaving": "CHF",
+                "energysaving": {
+                    "1": "Litri",
+                    "2": "m3",
+                    "3": "kg/anno",
+                    "4": "kg"
+                },
+                "CO2reduction": "kg/anno",
+                "CO2reduction2": "kg"
+            },
+            "fr": {
+                "moneysaving": "CHF",
+                "energysaving": {
+                    "1": "Litres",
+                    "2": "m3",
+                    "3": "kg/année",
+                    "4": "kg"
+                },
+                "CO2reduction": "kg/année",
+                "CO2reduction2": "kg"
+            }
+        }
+
+        // option_1 = 3
+        const d_1 = langObj['de']['moneysaving'][option_1]; // CHF
+        const d_2 = langObj['de']['energysaving'][option_2]; // kg/Jahr
+        const d_3 = langObj['de']['co2reduction']; // kg/Jahr
+
+        const f_1 = langObj['fr']['moneysaving']; // CHF
+        const f_2 = langObj['fr']['energysaving'][option_1]; // kg/Jahr
+        const f_3 = langObj['fr']['co2reduction']; // kg/Jahr
+
+        const i_1 = langObj['it']['moneysaving']; // CHF
+        const i_2 = langObj['it']['energysaving'][option_1]; // kg/Jahr
+        const i_3 = langObj['it']['co2reduction']; // kg/Jahr
+
+        let d_s1 = `${de_data.s1} ${d_1}`;
+        let d_s2 = `${de_data.s2} ${d_2}`;
+        let d_s3 = `${de_data.s3} ${d_3}`;
+
         const data_de = {
             id: de_data.id,
-            Ihre_Heizart: de_data.Ihre_Heizart,
-            Aktuelle_Fenster: de_data.Aktuelle_Fenster,
+            Ihre_Heizart: (de_data.Ihre_Heizart == 1) ? 'Öl' : (de_data.Ihre_Heizart == 2) ? 'Holz' : 'Gas',
+            Aktuelle_Fenster: (de_data.Aktuelle_Fenster == 1) ? 'einfach verglast (Uw: Ø 5,8)' : 'doppelt verglast (Uw: Ø 2,8)',
             email: de_data.email,
-            Verbaut: de_data.Verbaut,
+            Verbaut: (de_data.Verbaut == 1) ? 'Fenster' : (de_data.Verbaut == 2) ? 'Hebeschiebetüren' : 'Balkontüren',
             Stückzahl: de_data.Stückzahl,
             PZL_und_Ort: de_data.PZL_und_Ort,
-            Wärmedurchgang_Glas: de_data.Wärmedurchgang_Glas,
-            Fenstertyp: de_data.Fenstertyp,
-            s1: de_data.s1,
-            s2: de_data.s2,
-            s3: de_data.s3,
+            Wärmedurchgang_Glas: (de_data.Wärmedurchgang_Glas == 1) ? 'dreifach verglast (Ug = 0,5)' : 'dreifach verglast (Ug = 0,7)',
+            Fenstertyp: (de_data.Fenstertyp == 1) ? 'Kunststofffenster' : (de_data.Fenstertyp == 2) ? 'Kunststoff/Aluminium-Fenster' : (de_data.Fenstertyp == 3) ? 'Holzfenster' : 'Holz/Aluminium-Fenster',
+            s1: d_s1,
+            s2: d_s2,
+            s3: d_s3,
             w1: de_data.w1,
             w2: de_data.w2,
             w3: de_data.w3
@@ -48,14 +106,14 @@ const pdfCreate = async (bodyData, res) => {
         // French data
         const data_fr = {
             id: fr_data.id,
-            Ihre_Heizart: fr_data.Ihre_Heizart,
-            Aktuelle_Fenster: fr_data.Aktuelle_Fenster,
+            Ihre_Heizart: (fr_data.Ihre_Heizart == 1) ? 'fioul' : (fr_data.Ihre_Heizart == 2) ? 'bois' : 'gaz',
+            Aktuelle_Fenster: (fr_data.Aktuelle_Fenster == 1) ? 'simple vitrage (coefficient U: Ø 5,8)' : 'double vitrage (coefficient U: Ø 2,8)',
             email: fr_data.email,
-            Verbaut: fr_data.Verbaut,
+            Verbaut: (fr_data.Verbaut == 1) ? 'fenêtres' : (fr_data.Verbaut == 2) ? 'portes coulissantes à levage' : 'portes-fenêtres',
             Stückzahl: fr_data.Stückzahl,
             PZL_und_Ort: fr_data.PZL_und_Ort,
-            Wärmedurchgang_Glas: fr_data.Wärmedurchgang_Glas,
-            Fenstertyp: fr_data.Fenstertyp,
+            Wärmedurchgang_Glas: (fr_data.Wärmedurchgang_Glas == 1) ? 'verre premium, triple vitrage (Ug = 0,5)' : 'verre standard, triple vitrage (Ug = 0,7)',
+            Fenstertyp: (fr_data.Fenstertyp == 1) ? 'Fenêtres en PVC' : (fr_data.Fenstertyp == 2) ? 'Fenêtres en PVC/aluminium' : (fr_data.Fenstertyp == 3) ? 'Fenêtre en bois' : 'Fenêtres en bois/aluminium',
             s1: fr_data.s1,
             s2: fr_data.s2,
             s3: fr_data.s3,
@@ -67,14 +125,14 @@ const pdfCreate = async (bodyData, res) => {
         // Spanish data
         const data_it = {
             id: it_data.id,
-            Ihre_Heizart: it_data.Ihre_Heizart,
-            Aktuelle_Fenster: it_data.Aktuelle_Fenster,
+            Ihre_Heizart: (it_data.Ihre_Heizart == 1) ? 'Gasolio' : (it_data.Ihre_Heizart == 2) ? 'Legno' : 'Gas',
+            Aktuelle_Fenster: (it_data.Aktuelle_Fenster == 1) ? 'A vetro singolo (Uw: Ø 5,8)' : 'A vetro doppio (Uw: Ø 2,8)',
             email: it_data.email,
-            Verbaut: it_data.Verbaut,
+            Verbaut: (it_data.Verbaut == 1) ? 'Finestre' : (it_data.Verbaut == 2) ? 'Porte scorrecoli a sollevamento' : 'Porte-finestre',
             Stückzahl: it_data.Stückzahl,
             PZL_und_Ort: it_data.PZL_und_Ort,
-            Wärmedurchgang_Glas: it_data.Wärmedurchgang_Glas,
-            Fenstertyp: it_data.Fenstertyp,
+            Wärmedurchgang_Glas: (it_data.Wärmedurchgang_Glas == 1) ? 'Vetro premium, vetro triplo (Ug = 0,5)' : 'Vetro standard, vetro triplo (Ug = 0,7)',
+            Fenstertyp: (it_data.Fenstertyp == 1) ? 'Finestre in PVC' : (it_data.Fenstertyp == 2) ? 'Finestre in PVC/alluminio' : (it_data.Fenstertyp == 3) ? 'Finestre in legno' : 'Finestre in legno/alluminio',
             s1: it_data.s1,
             s2: it_data.s2,
             s3: it_data.s3,
@@ -87,7 +145,8 @@ const pdfCreate = async (bodyData, res) => {
 
         // English PDF
         const htmlTemplate_en = fs.readFileSync(path.resolve() + '/src/assets/templates/index_de.html', 'utf8');
-        const html_en = htmlTemplate_en.replace('{{Ihre_Heizart}}', data_de.Ihre_Heizart)
+        const html_en = htmlTemplate_en.replace('{{dateformate}}', formattedDate)
+            .replace('{{Ihre_Heizart}}', data_de.Ihre_Heizart)
             .replace('{{Aktuelle_Fenster}}', data_de.Aktuelle_Fenster)
             .replace('{{email}}', data_de.email)
             .replace('{{Verbaut}}', data_de.Verbaut)

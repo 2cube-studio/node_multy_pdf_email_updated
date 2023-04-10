@@ -28,7 +28,9 @@ class JobModel {
     updtPdfUrl = async (contId, req, res) => {
         const hubspotClient = new hubspot.Client({ "accessToken": process.env.accessToken });
 
-        const t = Date.now();
+        // const t = Date.now();
+        const now = new Date();
+        const t = now.getTime();
 
         let baseURL = `${process.env.folderStaticURL}`;
 

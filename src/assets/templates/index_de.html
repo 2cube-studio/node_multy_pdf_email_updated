@@ -12,7 +12,7 @@
 
 	<div class="main_box">
 		<!-- <div class="top_box"> -->
-			<div class="top_box" style="background: #f5822b">
+		<div class="top_box" style="background: #f5822b">
 			<div class="logo">
 				<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.17 28.22">
 					<polygon class="cls-1"
@@ -75,7 +75,8 @@
 		</div>
 		<div class="title">
 			<h1>Ihre Zusammenfassung</h1>
-			<span>PDF erstellt am: 14.11.2022</span>
+			<span>PDF erstellt {{dateformate}}</span>
+			<!-- <span>PDF erstellt am: 14.11.2022</span> -->
 		</div>
 		<div class="box_group">
 			<div class="box">
@@ -103,7 +104,7 @@
 						</div>
 						<div class="tr">
 							<div class="left">Stückzahl</div>
-							<div class="right">{{Stückzahl}}</div>
+							<div class="right">{{Stückzahl}} Stück</div>
 						</div>
 						<div class="tr">
 							<div class="left">PZL und Ort</div>
@@ -141,51 +142,84 @@
 						<div class="tr">
 							<div class="icon">
 								<div class="image">
-									<!-- <img src="images/icon-01.svg" /> -->
-									<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.8 14.77"><defs><style>.cls-1{stroke:#303335;}.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.5px;}.cls-2{stroke:#f5832a;}</style></defs><g id="Layer_1-2"><path class="cls-2" d="m3.04,10.79h2.48m-2.48-1.24h2.48m.31,3.1c-1.2,0-2.17-1.04-2.17-2.33s.97-2.33,2.17-2.33"/><path class="cls-1" d="m6.63,6.45h-3.45C1.81,7.46.25,9.49.25,11.1c0,2.23,1.24,3.41,4.65,3.41s4.65-1.18,4.65-3.41c0-1.61-1.56-3.65-2.93-4.65ZM7.69.87l-2.17.93-.62-1.55-.62,1.55-2.17-.93s1.24,1.86,1.24,3.1h3.1c0-1.24,1.24-3.1,1.24-3.1ZM2.73,5.21h4.34"/></g></svg>
+									<?xml version="1.0" encoding="UTF-8"?>
+									<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 9.8 14.76">
+										<g id="Layer_1-2" data-name="Layer 1-2">
+											<path
+												d="m3.04,10.79h2.48m-2.48-1.24h2.48m.31,3.1c-1.2,0-2.17-1.04-2.17-2.33s.97-2.33,2.17-2.33"
+												style="fill: none; stroke: #f5832a; stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px;" />
+											<path
+												d="m6.63,6.45h-3.45C1.81,7.46.25,9.49.25,11.1c0,2.23,1.24,3.41,4.65,3.41s4.65-1.18,4.65-3.41c0-1.61-1.56-3.65-2.93-4.65h.01ZM7.69.87l-2.17.93-.62-1.55-.62,1.55-2.17-.93s1.24,1.86,1.24,3.1h3.1c0-1.24,1.24-3.1,1.24-3.1ZM2.73,5.21h4.34"
+												style="fill: none; stroke: #303335; stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px;" />
+										</g>
+									</svg>
 								</div>
 							</div>
-							<div class="left">{{s1}}</div>
-							<div class="right">{{w1}}</div>
+							<div class="left">{{s1}}.</div>
+							<div class="right">{{w1}}.</div>
 						</div>
 						<div class="tr">
 							<div class="icon">
 								<div class="image">
-									<!-- <img src="images/icon-02.svg" /> -->
-									<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.07 12.62"><defs><style>.cls-1{stroke:#303335;}.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:.5px;}.cls-2{stroke:#f5832a;}</style></defs><g id="Layer_1-2"><path class="cls-1" d="m7.82,8.58c0,2.09-1.69,3.79-3.79,3.79S.25,10.67.25,8.58,4.04.25,4.04.25c0,0,3.79,6.24,3.79,8.33Z"/><path class="cls-2" d="m6.11,8.9c-.19.7-.71,1.26-1.37,1.51"/></g></svg>
+									<?xml version="1.0" encoding="UTF-8"?>
+									<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 8.08 12.62">
+										<g id="Layer_1-2" data-name="Layer 1-2">
+											<path
+												d="m7.82,8.58c0,2.09-1.69,3.79-3.79,3.79S.25,10.67.25,8.58,4.04.25,4.04.25c0,0,3.79,6.24,3.79,8.33h0Z"
+												style="fill: none; stroke: #303335; stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px;" />
+											<path d="m6.11,8.9c-.19.7-.71,1.26-1.37,1.51"
+												style="fill: none; stroke: #f5832a; stroke-linecap: round; stroke-linejoin: round; stroke-width: .5px;" />
+										</g>
+									</svg>
 								</div>
 							</div>
-							<div class="left">{{s2}}</div>
+							<div class="left">{{s2}}.</div>
 							<div class="right">{{w2}}</div>
 						</div>
 						<div class="tr">
 							<div class="icon">
 								<div class="image">
-									<!-- <img src="images/icon-03.svg" /> -->
-									<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.3 11.4"><defs><style>.cls-1{fill:#f5832a;}.cls-2{fill:none;stroke:#1a171d;stroke-miterlimit:10;stroke-width:.5px;}</style></defs><g id="Layer_1-2"><path class="cls-2" d="m4.14,11.15c-2.73,0-3.89-1.75-3.89-3.5s1.17-3.5,3.89-3.5c0,0,0-3.89,3.5-3.89s3.5,3.89,3.5,3.89c2.73,0,3.89,1.56,3.89,3.5,0,1.76-1.17,3.5-3.89,3.5h-7.01Z"/><path class="cls-1" d="m6.41,6.46h.6c-.02-.16-.06-.31-.14-.44-.07-.13-.16-.23-.27-.32-.11-.09-.23-.15-.37-.2-.14-.04-.28-.07-.44-.07-.22,0-.41.04-.59.12-.17.08-.32.18-.44.32-.12.14-.21.29-.28.48-.06.18-.09.38-.09.59s.03.4.09.58c.06.18.16.33.28.47.12.13.26.24.44.31.18.07.37.11.59.11.17,0,.34-.03.48-.08.15-.05.27-.13.38-.23.11-.1.2-.22.26-.37.07-.14.11-.3.12-.48h-.61c-.02.19-.09.34-.2.46-.11.12-.26.17-.45.17-.14,0-.26-.03-.36-.08-.1-.06-.18-.13-.24-.22-.06-.09-.11-.19-.14-.3-.03-.11-.04-.23-.04-.35s.01-.25.04-.36c.03-.12.08-.22.14-.31.06-.09.14-.17.24-.22.1-.06.22-.08.36-.08l.22.04.19.1.14.16.07.2Z"/><path class="cls-1" d="m7.34,6.94c0,.21.03.4.1.58.06.18.15.33.27.47.12.13.27.24.44.31.18.07.37.11.59.11s.42-.04.59-.11c.17-.08.32-.18.44-.31.12-.13.21-.29.28-.47.06-.18.09-.37.09-.58s-.03-.41-.09-.59c-.06-.18-.16-.34-.28-.48-.12-.14-.26-.24-.44-.32-.17-.08-.37-.12-.59-.12s-.41.04-.59.12c-.17.08-.32.18-.44.32-.12.13-.21.29-.27.48-.06.18-.1.38-.1.59m.62,0c0-.12.01-.24.04-.36.03-.12.07-.22.13-.31.06-.09.14-.17.24-.22.1-.06.22-.08.36-.08s.26.03.36.08c.1.05.18.13.24.22.06.09.1.19.13.31.03.12.04.24.04.36s-.01.24-.04.35c-.03.11-.07.21-.13.3-.06.09-.14.16-.24.22-.1.05-.22.08-.36.08s-.26-.03-.36-.08c-.1-.06-.18-.13-.24-.22-.06-.09-.11-.19-.13-.3-.03-.11-.04-.23-.04-.35"/><path class="cls-1" d="m12.4,9.3h-1.98c0-.11.01-.21.04-.3l.11-.23.19-.18c.08-.05.17-.1.28-.16l.44-.21c.12-.05.2-.1.24-.15l.07-.18-.09-.16c-.05-.05-.13-.07-.24-.07-.14,0-.25.03-.3.1-.05.07-.08.15-.09.25h-.62c0-.21.09-.38.26-.51.18-.13.43-.2.76-.2.3,0,.54.05.7.16.16.1.24.25.24.43,0,.14-.05.26-.16.35-.1.09-.24.18-.43.26l-.42.19-.2.12-.09.12h1.27v.37Z"/></g></svg>
+									<?xml version="1.0" encoding="UTF-8"?>
+									<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 15.28 11.39">
+										<g id="Layer_1-2" data-name="Layer 1-2">
+											<path
+												d="m4.14,11.14c-2.73,0-3.89-1.75-3.89-3.5s1.17-3.5,3.89-3.5c0,0,0-3.89,3.5-3.89s3.5,3.89,3.5,3.89c2.73,0,3.89,1.56,3.89,3.5,0,1.76-1.17,3.5-3.89,3.5h-7.01.01Z"
+												style="fill: none; stroke: #1a171d; stroke-miterlimit: 10; stroke-width: .5px;" />
+											<path
+												d="m6.41,6.45h.6c-.02-.16-.06-.31-.14-.44-.07-.13-.16-.23-.27-.32s-.23-.15-.37-.2c-.14-.04-.28-.07-.44-.07-.22,0-.41.04-.59.12-.17.08-.32.18-.44.32-.12.14-.21.29-.28.48-.06.18-.09.38-.09.59s.03.4.09.58.16.33.28.47c.12.13.26.24.44.31.18.07.37.11.59.11.17,0,.34-.03.48-.08.15-.05.27-.13.38-.23.11-.1.2-.22.26-.37.07-.14.11-.3.12-.48h-.61c-.02.19-.09.34-.2.46-.11.12-.26.17-.45.17-.14,0-.26-.03-.36-.08-.1-.06-.18-.13-.24-.22-.06-.09-.11-.19-.14-.3-.03-.11-.04-.23-.04-.35s.01-.25.04-.36c.03-.12.08-.22.14-.31s.14-.17.24-.22c.1-.06.22-.08.36-.08l.22.04.19.1.14.16.07.2h.02Z"
+												style="fill: #f5832a;" />
+											<path
+												d="m7.34,6.93c0,.21.03.4.1.58.06.18.15.33.27.47.12.13.27.24.44.31.18.07.37.11.59.11s.42-.04.59-.11c.17-.08.32-.18.44-.31.12-.13.21-.29.28-.47.06-.18.09-.37.09-.58s-.03-.41-.09-.59c-.06-.18-.16-.34-.28-.48s-.26-.24-.44-.32c-.17-.08-.37-.12-.59-.12s-.41.04-.59.12c-.17.08-.32.18-.44.32-.12.13-.21.29-.27.48-.06.18-.1.38-.1.59m.62,0c0-.12.01-.24.04-.36.03-.12.07-.22.13-.31.06-.09.14-.17.24-.22.1-.06.22-.08.36-.08s.26.03.36.08.18.13.24.22c.06.09.1.19.13.31s.04.24.04.36-.01.24-.04.35-.07.21-.13.3-.14.16-.24.22c-.1.05-.22.08-.36.08s-.26-.03-.36-.08c-.1-.06-.18-.13-.24-.22-.06-.09-.11-.19-.13-.3-.03-.11-.04-.23-.04-.35"
+												style="fill: #f5832a;" />
+											<path
+												d="m12.4,9.29h-1.98c0-.11.01-.21.04-.3l.11-.23.19-.18c.08-.05.17-.1.28-.16l.44-.21c.12-.05.2-.1.24-.15l.07-.18-.09-.16c-.05-.05-.13-.07-.24-.07-.14,0-.25.03-.3.1-.05.07-.08.15-.09.25h-.62c0-.21.09-.38.26-.51.18-.13.43-.2.76-.2.3,0,.54.05.7.16.16.1.24.25.24.43,0,.14-.05.26-.16.35-.1.09-.24.18-.43.26l-.42.19-.2.12-.09.12h1.27v.37h.02Z"
+												style="fill: #f5832a;" />
+										</g>
+									</svg>
 								</div>
 							</div>
-							<div class="left">{{s3}}</div>
+							<div class="left">{{s3}}.</div>
 							<div class="right">{{w3}}</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="bottom">
-			<div class="text">
-				<p>Jetzt Fachpartner Ihrer Nähe ﬁ nden und ein kostenloses Beratungsgespräch anfordern</p>
-			</div>
-			<div class="btn">
-				<a href="javascript:;"><img class="" src="./images/btn.png" alt="shape"></a>
-			</div>
-		</div> -->
 		<div class="bottom" style="text-align: center; padding: 50px 0;">
 			<div class="text">
 				<p>Jetzt Fachpartner Ihrer Nähe ﬁ nden und ein kostenloses Beratungsgespräch anfordern</p>
 			</div>
-			<div class="btn">
+			<!-- <div class="btn">
 				<a href="javascript:;"
+					style="background: #f5822b; font-size: 22px; padding: 20px 25px; border-radius: 5px; color: #FFF; display: inline-block; vertical-align: top; margin-top: 20px;">Zur
+					Fachpartnersuche</a>
+			</div> -->
+			<div class="btn">
+				<a href="https://www.egokiefer.ch/fr/pres-de-chez-vous/nos-personnes-de-contact/egokiefer-concessionnaires-rechercher/"
+					target="_blank"
 					style="background: #f5822b; font-size: 22px; padding: 20px 25px; border-radius: 5px; color: #FFF; display: inline-block; vertical-align: top; margin-top: 20px;">Zur
 					Fachpartnersuche</a>
 			</div>
